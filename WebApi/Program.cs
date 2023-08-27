@@ -10,7 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
 
-builder.Services.AddDistributedMemoryCache();
+//builder.Services.AddDistributedMemoryCache(); // => InMemory Cache
+builder.Services.AddStackExchangeRedisCache(opt => opt.Configuration = "localhost:6379"); // Redis Cache
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
