@@ -32,7 +32,7 @@ public static class ApplicationServicesRegistration
             configuration.AddOpenBehavior(typeof(CacheRemovingBehavior<,>));
             configuration.AddOpenBehavior(typeof(LoggingBehavior<,>));
         });
-        services.AddSingleton<LoggerServiceBase, FileLogger>();
+        services.AddSingleton<LoggerServiceBase, MsSqlLogger>(); // FileLogger , MsSqlLogger vs..
         return services;
     }
 
